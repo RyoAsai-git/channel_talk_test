@@ -1,17 +1,17 @@
 <template>
   <main>
-    <h2>{{title}}</h2>
+    <h2>{{ title }}</h2>
   </main>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      title: "お問い合わせページです。"
-    }
-  }
-}
+      title: "お問い合わせページです。",
+    };
+  },
+};
 </script>
 
 <style scoped>
