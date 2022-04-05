@@ -10,12 +10,12 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      title: "ヘッダー"
-    }
-  }
-}
+      title: "ヘッダー",
+    };
+  },
+};
 </script>
 
 <style scoped>

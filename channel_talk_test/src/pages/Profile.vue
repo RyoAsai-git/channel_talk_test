@@ -1,17 +1,17 @@
 <template>
   <main>
-    <h2>{{title}}</h2>
+    <h2>{{ title }}</h2>
   </main>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      title: "プロフィールページです。"
-    }
-  }
-}
+      title: "プロフィールページです。",
+    };
+  },
+};
 </script>
 
 <style scoped>
