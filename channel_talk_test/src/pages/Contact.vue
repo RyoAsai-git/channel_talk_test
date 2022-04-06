@@ -5,13 +5,24 @@
 </template>
 
 <script>
+import ChannelService from '../channelTalk/channelTalk'
+
 export default {
   data() {
     return {
       title: "お問い合わせページです。",
+      route: this.$route,
     };
   },
+  created: function() {
+    if (this.route.path == '/contact') {
+        ChannelService.boot({
+          "pluginKey": "3ad99376-fc05-4f64-862c-9b8772628dd6",
+        });
+    }
+  }
 };
+
 </script>
 
 <style scoped>
