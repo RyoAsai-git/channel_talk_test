@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ChannelService from '../channelTalk/channelTalk'
+import {Mixin} from '../js/mixin'
 
 export default {
   data() {
@@ -14,13 +14,7 @@ export default {
       route: this.$route,
     };
   },
-  created: function() {
-    if (this.route.path == '/profile') {
-        ChannelService.boot({
-          "pluginKey": "3ad99376-fc05-4f64-862c-9b8772628dd6", //please fill with your plugin key
-        });
-    }
-  }
+  mixins:[Mixin]
 };
 </script>
 
