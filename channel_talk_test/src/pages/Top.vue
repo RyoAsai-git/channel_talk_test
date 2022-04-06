@@ -31,32 +31,4 @@ main {
 h2 {
   margin: 0;
 }
-
-/* body .Launcherstyled__Wrapper-oef45p-0 {
-  position: absolute !important;
-  left: 0px !important;
-}
-
-body .dblqKJ {
-  position: absolute !important;
-  left: 0px !important;
-}
-
-body div .dblqKJ {
-  position: absolute !important;
-  left: 0px !important;
-}
-
-body div#launcher {
-  position: absolute !important;
-  left: 0px !important;
-} */
-
-/* div#ch-plugin .dblqKJ {
-  background: red !important;
-  position: absolute !important;
-  left: 0px !important;
-} */
-
-
 </style>
