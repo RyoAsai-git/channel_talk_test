@@ -5,12 +5,16 @@
 </template>
 
 <script>
+import {Mixin} from '../js/mixin'
+
 export default {
   data() {
     return {
       title: "プロフィールページです。",
+      route: this.$route,
     };
   },
+  mixins:[Mixin]
 };
 </script>
 

@@ -1,39 +1,52 @@
-(function () {
+class ChannelService {
+  constructor() {
+    this.loadScript();
+  }
+
+  loadScript() {
     var w = window;
     if (w.ChannelIO) {
-        return (window.console.error || window.console.log || function () {})('ChannelIO script included twice.');
+      return (window.console.error || window.console.log || function () {})('ChannelIO script included twice.');
     }
     var ch = function () {
-        ch.c(arguments);
+      ch.c(arguments);
     };
     ch.q = [];
     ch.c = function (args) {
-        ch.q.push(args);
+      ch.q.push(args);
     };
     w.ChannelIO = ch;
 
     function l() {
-        if (w.ChannelIOInitialized) {
+      if (w.ChannelIOInitialized) {
         return;
-        }
-        w.ChannelIOInitialized = true;
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-        s.charset = 'UTF-8';
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
     }
     if (document.readyState === 'complete') {
-        l();
+      l();
     } else if (window.attachEvent) {
-        window.attachEvent('onload', l);
+      window.attachEvent('onload', l);
     } else {
-        window.addEventListener('DOMContentLoaded', l, false);
-        window.addEventListener('load', l, false);
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
     }
-})();
-ChannelIO('boot', {
-    "pluginKey": "3ad99376-fc05-4f64-862c-9b8772628dd6"
-});
+  }
+
+  boot(settings) {
+    window.ChannelIO('boot', settings);
+  }
+
+  shutdown() {
+    window.ChannelIO('shutdown');
+  }
+}
+
+export default new ChannelService();
